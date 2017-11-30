@@ -11,6 +11,12 @@ noremap <C-j> <esc>
 noremap! <C-j> <esc>
 
 "メインはRubyなのでインデント幅を2で設定
+set expandtab
 set tabstop=2
 set shiftwidth=2
+set autoindent
+
+"画面に関する設定
+set cursorline
+set number
 
