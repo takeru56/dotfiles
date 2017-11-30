@@ -1,5 +1,4 @@
 "syntax関連の設定
-syntax on
 set t_Co=256
 
 "カラースキームの採用"
@@ -19,4 +18,21 @@ set autoindent
 "画面に関する設定
 set cursorline
 set number
+
+
+"<-----------------パッケージ管理
+if &compatible
+  set nocompatible
+endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+call dein#begin(expand('~/.vim/dein'))
+call dein#add('scrooloose/nerdtree')
+
+call dein#end()
+"ここまでパッケージ管理--------->
+
+"ここじゃないと反応しなかった
+syntax on
+
 
