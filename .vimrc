@@ -25,14 +25,21 @@ if &compatible
   set nocompatible
 endif
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
-
 call dein#begin(expand('~/.vim/dein'))
+"---------------------------------------------->>>
+">NerdTree
 call dein#add('scrooloose/nerdtree')
-
+"---------------------------------------------->>>
 call dein#end()
 "ここまでパッケージ管理--------->
+"記述後は、:call dein#install()で実行 
+
 
 "ここじゃないと反応しなかった
 syntax on
+
+"NerdTreeのせっていやらなんやら
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+autocmd VimEnter * execute 'NERDTree'
 
 
