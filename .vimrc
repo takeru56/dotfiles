@@ -1,6 +1,6 @@
 "syntax関連の設定
 set t_Co=256
-
+  
 "カラースキームの採用"
 set background=dark
 colorscheme hybrid 
@@ -14,11 +14,15 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set autoindent
+set smartindent
 
 "画面に関する設定
 set cursorline
 set number
+set cursorcolumn
 
+"スワップファイルを作成しない
+set nobackup
 
 "<-----------------パッケージ管理
 if &compatible
@@ -34,7 +38,7 @@ call dein#add('tpope/vim-rails')
 ">vim-ruby
 call dein#add('vim-ruby/vim-ruby')
 ">endの補完
-call dein#add('tpope/vim-endwise')
+call dein#add('cohama/vim-endwise')
 ">lacal変数のハイライト
 call dein#add('todesking/ruby_hl_lvar.vim')
 "---------------------------------------------->>>
@@ -48,9 +52,19 @@ syntax on
 
 "NerdTreeのせっていやらなんやら
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
-autocmd VimEnter * execute 'NERDTree'
 
 "local変数のハイライトに関する設定
 let g:ruby_hl_lvar_hl_group = 'RubyLocalVariable'
 let g:ruby_hl_lvar_auto_enable = 0
+
+"スペース、タブの可視化
+set list
+set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
+set list listchars=tab:\▸\-
+
+"サーチ系
+set hlsearch   " 検索文字列をハイライトする
+set incsearch  " インクリメンタルサーチを行う
+set ignorecase " 大文字と小文字を区別しない
+
 
