@@ -4,6 +4,8 @@ set t_Co=256
 "バックグラウンドカラーをvimとターミナルで同じに
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
+autocmd ColorScheme * highlight Comment ctermfg=125 guifg=#008800
+autocmd ColorScheme * highlight Visual ctermfg=47
   
 "カラースキームの採用"
 set background=dark
