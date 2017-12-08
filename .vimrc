@@ -1,5 +1,9 @@
 "syntax関連の設定
 set t_Co=256
+
+"バックグラウンドカラーをvimとターミナルで同じに
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
   
 "カラースキームの採用"
 set background=dark
@@ -38,9 +42,12 @@ call dein#add('tpope/vim-rails')
 ">vim-ruby
 call dein#add('vim-ruby/vim-ruby')
 ">endの補完
-call dein#add('cohama/vim-endwise')
+call dein#add('tpope/vim-endwise')
 ">lacal変数のハイライト
+call dein#add('Shougo/neocomplete.vim')
 call dein#add('todesking/ruby_hl_lvar.vim')
+call dein#add("osyo-manga/vim-monster")
+
 "---------------------------------------------->>>
 call dein#end()
 "ここまでパッケージ管理--------->
@@ -66,5 +73,4 @@ set list listchars=tab:\▸\-
 set hlsearch   " 検索文字列をハイライトする
 set incsearch  " インクリメンタルサーチを行う
 set ignorecase " 大文字と小文字を区別しない
-
 
