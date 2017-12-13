@@ -36,7 +36,7 @@ if &compatible
 endif
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.vim/dein'))
-"---------------------------------------------->>>
+"---------------------------------------------->>> 
 ">NerdTree
 call dein#add('scrooloose/nerdtree')
 ">vim-rails
@@ -51,6 +51,10 @@ call dein#add('todesking/ruby_hl_lvar.vim')
 call dein#add("osyo-manga/vim-monster")
 "vimでgitを
 call dein#add("tpope/vim-fugitive")
+"vim-tags
+call dein#add("szw/vim-tags")
+"unite.vim
+call dein#add('Shougo/unite.vim')
 
 "---------------------------------------------->>>
 call dein#end()
