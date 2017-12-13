@@ -4,7 +4,7 @@ set t_Co=256
 "バックグラウンドカラーをvimとターミナルで同じに
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
-autocmd ColorScheme * highlight Comment ctermfg=125 guifg=#008800
+autocmd ColorScheme * highlight Comment ctermfg=92 guifg=#008800
 autocmd ColorScheme * highlight Visual ctermfg=47
   
 "カラースキームの採用"
@@ -49,6 +49,8 @@ call dein#add('tpope/vim-endwise')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('todesking/ruby_hl_lvar.vim')
 call dein#add("osyo-manga/vim-monster")
+"vimでgitを
+call dein#add("tpope/vim-fugitive")
 
 "---------------------------------------------->>>
 call dein#end()
