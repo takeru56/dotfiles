@@ -1,4 +1,3 @@
-"syntax関連の設定
 set t_Co=256
 
 "バックグラウンドカラーをvimとターミナルで同じに
@@ -103,4 +102,5 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
     call NERDTreeHighlightFile('haml', '178', 'none', '#d9322c', '#151515')
     call NERDTreeHighlightFile('erb', '178', 'none', '#d9322c', '#151515')
     call NERDTreeHighlightFile('slim', '178', 'none', '#d9322c', '#151515')
+
 
