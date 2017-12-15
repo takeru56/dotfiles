@@ -7,7 +7,8 @@ autocmd ColorScheme * highlight Comment ctermfg=92 guifg=#008800
 autocmd ColorScheme * highlight Visual ctermfg=47
   
 "カラースキームの採用"
-set background=dark
+"set background=dark
+"set termguicolors
 colorscheme hybrid 
 
 "escキーの代用設定
@@ -44,7 +45,12 @@ call dein#add('tpope/vim-rails')
 call dein#add('vim-ruby/vim-ruby')
 ">endの補完
 call dein#add('tpope/vim-endwise')
-">lacal変数のハイライト
+"コード補完
+
+"call dein#add('Shougo/deoplete.nvim')
+"call dein#add('roxma/nvim-yarp')
+"call dein#add('roxma/vim-hug-neovim-rpc')
+"lacal変数のハイライト
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('todesking/ruby_hl_lvar.vim')
 call dein#add("osyo-manga/vim-monster")
@@ -76,6 +82,8 @@ set list
 set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
 set list listchars=tab:\▸\-
 
+let g:deoplete#enable_at_startup = 1
+
 "サーチ系
 set hlsearch   " 検索文字列をハイライトする
 set incsearch  " インクリメンタルサーチを行う
@@ -103,4 +111,11 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
     call NERDTreeHighlightFile('erb', '178', 'none', '#d9322c', '#151515')
     call NERDTreeHighlightFile('slim', '178', 'none', '#d9322c', '#151515')
 
+let s:neco_dicts_dir = '/path/to/any/dir/for/dicts'
+if isdirectory(s:neco_dicts_dir)
+  let g:neocomplete#sources#dictionary#dictionaries = {
+  \   'ruby': s:neco_dicts_dir . '/ruby.dict',
+  \   'javascript': s:neco_dicts_dir . '/jquery.dict',
+  \ }
+endif
 
