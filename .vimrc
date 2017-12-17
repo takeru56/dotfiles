@@ -5,15 +5,22 @@ autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
 autocmd ColorScheme * highlight Comment ctermfg=92 guifg=#008800
 autocmd ColorScheme * highlight Visual ctermfg=47
+
+"全角スペースハイライト
+autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
+autocmd VimEnter * match FullWidthSpace /　/
   
 "カラースキームの採用"
 "set background=dark
 "set termguicolors
 colorscheme hybrid 
 
+"=======キーバインド========
 "escキーの代用設定
 noremap <C-j> <esc>
 noremap! <C-j> <esc>
+"html補完
+let g:user_emmet_leader_key='<c-t>'
 
 "メインはRubyなのでインデント幅を2で設定
 set expandtab
@@ -46,7 +53,7 @@ call dein#add('vim-ruby/vim-ruby')
 ">endの補完
 call dein#add('tpope/vim-endwise')
 "コード補完
-
+call dein#add('mattn/emmet-vim')
 "call dein#add('Shougo/deoplete.nvim')
 "call dein#add('roxma/nvim-yarp')
 "call dein#add('roxma/vim-hug-neovim-rpc')
