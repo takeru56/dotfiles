@@ -9,6 +9,7 @@ autocmd ColorScheme * highlight Visual ctermfg=47
 "全角スペースハイライト
 autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
 autocmd VimEnter * match FullWidthSpace /　/
+
   
 "カラースキームの採用"
 "set background=dark
@@ -72,6 +73,9 @@ call dein#add("tpope/vim-fugitive")
 call dein#add("szw/vim-tags")
 "unite.vim
 call dein#add('Shougo/unite.vim')
+
+"カラーコードプレビュー
+call dein#add('gorodinskiy/vim-coloresque')
 
 "---------------------------------------------->>>
 call dein#end()
