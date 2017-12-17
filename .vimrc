@@ -37,6 +37,11 @@ set cursorcolumn
 "スワップファイルを作成しない
 set nobackup
 
+"{}の補完
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
+
 "<-----------------パッケージ管理
 if &compatible
   set nocompatible
