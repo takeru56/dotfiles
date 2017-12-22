@@ -37,6 +37,7 @@ set cursorcolumn
 
 "スワップファイルを作成しない
 set nobackup
+set noswapfile
 
 "{}の補完
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
