@@ -66,6 +66,7 @@ call dein#add('mattn/emmet-vim')
 "call dein#add('roxma/vim-hug-neovim-rpc')
 "lacal変数のハイライト
 call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/neocomplcache')
 call dein#add('todesking/ruby_hl_lvar.vim')
 call dein#add("osyo-manga/vim-monster")
 "vimでgitを
@@ -128,11 +129,50 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
     call NERDTreeHighlightFile('erb', '178', 'none', '#d9322c', '#151515')
     call NERDTreeHighlightFile('slim', '178', 'none', '#d9322c', '#151515')
 
-let s:neco_dicts_dir = '/path/to/any/dir/for/dicts'
-if isdirectory(s:neco_dicts_dir)
-  let g:neocomplete#sources#dictionary#dictionaries = {
-  \   'ruby': s:neco_dicts_dir . '/ruby.dict',
-  \   'javascript': s:neco_dicts_dir . '/jquery.dict',
-  \ }
+"自動補完に関する設定----------------------------------
+
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : ''
+    \ }
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplcache#smart_close_popup() . "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+"自動補完で用いるsense用の設定--------------------------------
+
+if !exists('g:neocomplcache_omni_patterns')
+    let g:neocomplcache_omni_patterns = {}
 endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+
+"rsenseのインストールフォルダがデフォルトと異なるので設定
+let g:rsenseHome = expand("/Users/takeru/.rbenv/shims/rsense")
+let g:rsenseUseOmniFunc = 1
 
