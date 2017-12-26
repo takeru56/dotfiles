@@ -34,6 +34,7 @@ set smartindent
 set cursorline
 set number
 set cursorcolumn
+set showmatch  
 
 "スワップファイルを作成しない
 set nobackup
@@ -79,6 +80,9 @@ call dein#add('Shougo/unite.vim')
 "カラーコードプレビュー
 call dein#add('gorodinskiy/vim-coloresque')
 
+"複数選択変種を可能に
+call dein#add('terryma/vim-multiple-cursors')
+
 "---------------------------------------------->>>
 call dein#end()
 "ここまでパッケージ管理--------->
@@ -97,7 +101,7 @@ let g:ruby_hl_lvar_auto_enable = 0
 
 "スペース、タブの可視化
 set list
-set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
+set listchars=tab:▸\ ,eol:↲,extends:❯,precedes:❮
 set list listchars=tab:\▸\-
 
 let g:deoplete#enable_at_startup = 1
