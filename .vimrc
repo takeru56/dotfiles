@@ -41,13 +41,13 @@ set nobackup
 set noswapfile
 
 "{}の補完
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap {<Enter> {}<Left><CR><ESC><s-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
-
+inoremap <%<Enter> %><Left><CR><ESC><S-o>
 "<-----------------パッケージ管理
 if &compatible
-  set nocompatible
+set nocompatible
 endif
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.vim/dein'))
@@ -69,7 +69,7 @@ call dein#add('mattn/emmet-vim')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neocomplcache')
 call dein#add('todesking/ruby_hl_lvar.vim')
-call dein#add("osyo-manga/vim-monster")
+"call dein#add("osyo-manga/vim-monster")
 "vimでgitを
 call dein#add("tpope/vim-fugitive")
 "vim-tags
