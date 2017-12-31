@@ -15,8 +15,6 @@ set listchars=tab:\|\
 hi SpecialKey guifg=#333333
   
 "カラースキームの採用"
-"set background=dark
-"set termguicolors
 colorscheme hybrid 
 
 "=======キーバインド========
@@ -49,7 +47,7 @@ inoremap {<Enter> {}<Left><CR><ESC><s-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 inoremap <%<Enter> %><Left><CR><ESC><S-o>
-"<-----------------パッケージ管理
+"<----------------------------------パッケージ管理
 if &compatible
 set nocompatible
 endif
@@ -80,18 +78,15 @@ call dein#add("tpope/vim-fugitive")
 call dein#add("szw/vim-tags")
 "unite.vim
 call dein#add('Shougo/unite.vim')
-
 "カラーコードプレビュー
 call dein#add('gorodinskiy/vim-coloresque')
-
 "複数選択変種を可能に
 call dein#add('terryma/vim-multiple-cursors')
-
+"ステータスラインを美く
 call dein#add('itchyny/lightline.vim')
-
 "---------------------------------------------->>>
 call dein#end()
-"ここまでパッケージ管理--------->
+"ここまでパッケージ管理--------------------------->
 "記述後は、:call dein#install()で実行 
 
 
@@ -135,7 +130,7 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
     call NERDTreeHighlightFile('erb', '178', 'none', '#d9322c', '#151515')
     call NERDTreeHighlightFile('slim', '178', 'none', '#d9322c', '#151515')
 
-"自動補完に関する設定----------------------------------
+"自動補完に関する設定-------------------------------------->>>>
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -170,7 +165,7 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-"自動補完で用いるsense用の設定--------------------------------
+"自動補完で用いるsense用の設定----------------------------->>>
 
 if !exists('g:neocomplcache_omni_patterns')
     let g:neocomplcache_omni_patterns = {}
