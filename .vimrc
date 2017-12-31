@@ -10,6 +10,9 @@ autocmd ColorScheme * highlight Visual ctermfg=47
 autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
 autocmd VimEnter * match FullWidthSpace /　/
 
+set list
+set listchars=tab:\|\ 
+hi SpecialKey guifg=#333333
   
 "カラースキームの採用"
 "set background=dark
@@ -29,6 +32,7 @@ set tabstop=2
 set shiftwidth=2
 set autoindent
 set smartindent
+
 
 "画面に関する設定
 set cursorline
@@ -83,6 +87,8 @@ call dein#add('gorodinskiy/vim-coloresque')
 "複数選択変種を可能に
 call dein#add('terryma/vim-multiple-cursors')
 
+call dein#add('itchyny/lightline.vim')
+
 "---------------------------------------------->>>
 call dein#end()
 "ここまでパッケージ管理--------->
@@ -99,10 +105,6 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let g:ruby_hl_lvar_hl_group = 'RubyLocalVariable'
 let g:ruby_hl_lvar_auto_enable = 0
 
-"スペース、タブの可視化
-set list
-set listchars=tab:▸\ ,eol:↲,extends:❯,precedes:❮
-set list listchars=tab:\▸\-
 
 let g:deoplete#enable_at_startup = 1
 
