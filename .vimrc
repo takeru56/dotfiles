@@ -84,6 +84,8 @@ call dein#add('gorodinskiy/vim-coloresque')
 call dein#add('terryma/vim-multiple-cursors')
 "ステータスラインを美く
 call dein#add('itchyny/lightline.vim')
+"coffeescriptをハイライト
+call dein#add('kchmck/vim-coffee-script')
 "---------------------------------------------->>>
 call dein#end()
 "ここまでパッケージ管理--------------------------->
