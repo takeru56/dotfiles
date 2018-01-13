@@ -86,6 +86,8 @@ call dein#add('terryma/vim-multiple-cursors')
 call dein#add('itchyny/lightline.vim')
 "coffeescriptをハイライト
 call dein#add('kchmck/vim-coffee-script')
+"選択してctr+kでコメントアウト
+call dein#add("tyru/caw.vim.git")
 "---------------------------------------------->>>
 call dein#end()
 "ここまでパッケージ管理--------------------------->
@@ -178,4 +180,9 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 "rsenseのインストールフォルダがデフォルトと異なるので設定
 let g:rsenseHome = expand("/Users/takeru/.rbenv/shims/rsense")
 let g:rsenseUseOmniFunc = 1
+
+
+nmap <C-K> <Plug>(caw:i:toggle)
+vmap <C-K> <Plug>(caw:i:toggle)
+
 
