@@ -1,3 +1,5 @@
+set encoding=utf-8
+scriptencoding utf-8
 set t_Co=256
 
 "バックグラウンドカラーをvimとターミナルで同じに
