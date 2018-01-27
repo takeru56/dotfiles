@@ -49,6 +49,11 @@ inoremap {<Enter> {}<Left><CR><ESC><s-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 inoremap <%<Enter> %><Left><CR><ESC><S-o>
+
+"%で対応するカッコへジャンプ
+set showmatch
+source $VIMRUNTIME/macros/matchit.vim
+
 "<----------------------------------パッケージ管理
 if &compatible
 set nocompatible
