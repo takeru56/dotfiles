@@ -32,7 +32,7 @@ set tabstop=2
 set shiftwidth=2
 set autoindent
 set smartindent
-
+let g:indent_guides_enable_on_vim_startup = 1
 
 "画面に関する設定
 set cursorline
@@ -53,6 +53,26 @@ inoremap <%<Enter> %><Left><CR><ESC><S-o>
 "%で対応するカッコへジャンプ
 set showmatch
 source $VIMRUNTIME/macros/matchit.vim
+
+"行が折り返し表示されていた場合、行単位ではなく表示行単位でカーソルを移動する
+nnoremap j gj
+nnoremap k gk
+nnoremap <down> gj
+nnoremap <up> gk
+
+"クリップボードからペーストする時の自動インデントを防ぐ
+if &term =~ "xterm"
+    let &t_SI .= "\e[?2004h"
+    let &t_EI .= "\e[?2004l"
+    let &pastetoggle = "\e[201~"
+
+    function XTermPasteBegin(ret)
+        set paste
+        return a:ret
+    endfunction
+
+    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+endif
 
 "<----------------------------------パッケージ管理
 if &compatible
@@ -93,8 +113,13 @@ call dein#add('terryma/vim-multiple-cursors')
 call dein#add('itchyny/lightline.vim')
 "coffeescriptをハイライト
 call dein#add('kchmck/vim-coffee-script')
+"vimでジャバスクリプト
+call dein#add('pangloss/vim-javascript')
+call dein#add('mxw/vim-jsx')
 "選択してctr+kでコメントアウト
 call dein#add("tyru/caw.vim.git")
+"インデントラインを表示する
+call dein#add("nathanaelkane/vim-indent-guides")
 "---------------------------------------------->>>
 call dein#end()
 "ここまでパッケージ管理--------------------------->
@@ -104,8 +129,11 @@ call dein#end()
 "ここじゃないと反応しなかった
 syntax on
 
+let g:jsx_ext_required = 0
+
 "NerdTreeのせっていやらなんやら
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+let NERDTreeWinSize=25
 
 "local変数のハイライトに関する設定
 let g:ruby_hl_lvar_hl_group = 'RubyLocalVariable'
