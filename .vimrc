@@ -45,10 +45,10 @@ set nobackup
 set noswapfile
 
 "{}の補完
-inoremap {<Enter> {}<Left><CR><ESC><s-o>
-inoremap [<Enter> []<Left><CR><ESC><S-o>
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
-inoremap <%<Enter> %><Left><CR><ESC><S-o>
+"inoremap {<Enter> {}<Left><CR><ESC><s-o>
+"inoremap [<Enter> []<Left><CR><ESC><S-o>
+"inoremap (<Enter> ()<Left><CR><ESC><S-o>
+"inoremap <%<Enter> %><Left><CR><ESC><S-o>
 
 "%で対応するカッコへジャンプ
 set showmatch
@@ -120,6 +120,8 @@ call dein#add('mxw/vim-jsx')
 call dein#add("tyru/caw.vim.git")
 "インデントラインを表示する
 call dein#add("nathanaelkane/vim-indent-guides")
+"カッコの補完
+call dein#add("cohama/lexima.vim")
 "---------------------------------------------->>>
 call dein#end()
 "ここまでパッケージ管理--------------------------->
