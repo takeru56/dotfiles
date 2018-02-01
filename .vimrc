@@ -1,3 +1,4 @@
+"基本設定
 set encoding=utf-8
 scriptencoding utf-8
 set t_Co=256
@@ -23,6 +24,7 @@ colorscheme hybrid
 "escキーの代用設定
 noremap <C-j> <esc>
 noremap! <C-j> <esc>
+
 "html補完
 let g:user_emmet_leader_key='<c-t>'
 
@@ -44,12 +46,6 @@ set showmatch
 set nobackup
 set noswapfile
 
-"{}の補完
-"inoremap {<Enter> {}<Left><CR><ESC><s-o>
-"inoremap [<Enter> []<Left><CR><ESC><S-o>
-"inoremap (<Enter> ()<Left><CR><ESC><S-o>
-"inoremap <%<Enter> %><Left><CR><ESC><S-o>
-
 "%で対応するカッコへジャンプ
 set showmatch
 source $VIMRUNTIME/macros/matchit.vim
@@ -62,16 +58,16 @@ nnoremap <up> gk
 
 "クリップボードからペーストする時の自動インデントを防ぐ
 if &term =~ "xterm"
-    let &t_SI .= "\e[?2004h"
-    let &t_EI .= "\e[?2004l"
-    let &pastetoggle = "\e[201~"
+ let &t_SI .= "\e[?2004h"
+ let &t_EI .= "\e[?2004l"
+ let &pastetoggle = "\e[201~"
 
-    function XTermPasteBegin(ret)
-        set paste
-        return a:ret
-    endfunction
+ function XTermPasteBegin(ret)
+     set paste
+     return a:ret
+ endfunction
 
-    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
 endif
 
 "<----------------------------------パッケージ管理
@@ -91,9 +87,6 @@ call dein#add('vim-ruby/vim-ruby')
 call dein#add('tpope/vim-endwise')
 "コード補完
 call dein#add('mattn/emmet-vim')
-"call dein#add('Shougo/deoplete.nvim')
-"call dein#add('roxma/nvim-yarp')
-"call dein#add('roxma/vim-hug-neovim-rpc')
 "lacal変数のハイライト
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neocomplcache')
@@ -141,7 +134,6 @@ let NERDTreeWinSize=25
 let g:ruby_hl_lvar_hl_group = 'RubyLocalVariable'
 let g:ruby_hl_lvar_auto_enable = 0
 
-
 let g:deoplete#enable_at_startup = 1
 
 "サーチ系
@@ -172,7 +164,6 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
     call NERDTreeHighlightFile('slim', '178', 'none', '#d9322c', '#151515')
 
 "自動補完に関する設定-------------------------------------->>>>
-
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
