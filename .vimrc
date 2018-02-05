@@ -115,6 +115,8 @@ call dein#add("tyru/caw.vim.git")
 call dein#add("nathanaelkane/vim-indent-guides")
 "カッコの補完
 call dein#add("cohama/lexima.vim")
+"検索
+call dein#add("ctrlpvim/ctrlp.vim")
 "---------------------------------------------->>>
 call dein#end()
 "ここまでパッケージ管理--------------------------->
@@ -213,4 +215,7 @@ let g:rsenseUseOmniFunc = 1
 nmap <C-K> <Plug>(caw:i:toggle)
 vmap <C-K> <Plug>(caw:i:toggle)
 
-
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar', 'unite']
