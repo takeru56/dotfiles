@@ -75,6 +75,7 @@ if &compatible
 set nocompatible
 endif
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+if dein#load_state(expand('~/.vim/dein'))
 call dein#begin(expand('~/.vim/dein'))
 "---------------------------------------------->>> 
 ">NerdTree
@@ -117,8 +118,13 @@ call dein#add("nathanaelkane/vim-indent-guides")
 call dein#add("cohama/lexima.vim")
 "検索
 call dein#add("ctrlpvim/ctrlp.vim")
+
+"call dein#add('Yggdroot/indentLine')
 "---------------------------------------------->>>
 call dein#end()
+call dein#save_state()
+endif
+filetype plugin indent on
 "ここまでパッケージ管理--------------------------->
 "記述後は、:call dein#install()で実行 
 
@@ -217,5 +223,8 @@ vmap <C-K> <Plug>(caw:i:toggle)
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
+let g:indent_guides_guide_size = 1 
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
+let g:indent_guides_auto_colors=0
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar', 'unite']
