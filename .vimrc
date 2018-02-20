@@ -114,12 +114,9 @@ call dein#add('mxw/vim-jsx')
 call dein#add("tyru/caw.vim.git")
 "インデントラインを表示する
 call dein#add("nathanaelkane/vim-indent-guides")
-"カッコの補完
-call dein#add("cohama/lexima.vim")
 "検索
 call dein#add("ctrlpvim/ctrlp.vim")
 
-"call dein#add('Yggdroot/indentLine')
 "---------------------------------------------->>>
 call dein#end()
 call dein#save_state()
