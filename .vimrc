@@ -25,7 +25,6 @@ colorscheme hybrid
 noremap <C-j> <esc>
 noremap! <C-j> <esc>
 
-
 "html補完
 let g:user_emmet_leader_key='<c-t>'
 
@@ -277,3 +276,17 @@ map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 "----------vimのタブ関連の設定------------------->>>
+
+" かっこ補完==========================>
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+vnoremap { "zdi^V{<C-R>z}<ESC>
+vnoremap [ "zdi^V[<C-R>z]<ESC>
+vnoremap ( "zdi^V(<C-R>z)<ESC>
+vnoremap " "zdi^V"<C-R>z^V"<ESC>
+vnoremap ' "zdi'<C-R>z'<ESC>
+"カッコ補完===========================>
+
