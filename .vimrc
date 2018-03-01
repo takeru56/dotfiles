@@ -116,6 +116,10 @@ call dein#add("tyru/caw.vim.git")
 call dein#add("nathanaelkane/vim-indent-guides")
 "検索
 call dein#add("ctrlpvim/ctrlp.vim")
+"カッコの補完
+call dein#add("cohama/lexima.vim")
+"差分を左側に表示する
+call dein#add("airblade/vim-gitgutter")
 
 "---------------------------------------------->>>
 call dein#end()
