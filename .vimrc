@@ -120,6 +120,8 @@ call dein#add("ctrlpvim/ctrlp.vim")
 call dein#add("cohama/lexima.vim")
 "差分を左側に表示する
 call dein#add("airblade/vim-gitgutter")
+"vimでRiot.jsのsyntaxをする
+call dein#add("ryym/vim-riot")
 
 "---------------------------------------------->>>
 call dein#end()
