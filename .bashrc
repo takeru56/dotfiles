@@ -8,3 +8,9 @@ alias nv='nvim'
 alias gs='git status'
 alias gc='git checkout'
 alias gpo='git push origin master'
+
+# ファイル作って入る
+function mkcd(){
+  mkdir $1;
+  cd $1;
+}
