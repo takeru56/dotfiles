@@ -15,6 +15,7 @@ function mkcd(){
   cd $1;
 }
 
+# docker-compose "処理"
 function dc(){
   docker-compose $1;
 }
