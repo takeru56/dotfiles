@@ -20,6 +20,7 @@ hi SpecialKey guifg=#333333
 "カラースキームの採用"
 colorscheme hybrid 
 
+set clipboard=unnamed,autoselect
 "=======キーバインド========
 "escキーの代用設定
 noremap <C-j> <esc>
