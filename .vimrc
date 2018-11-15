@@ -38,9 +38,7 @@ set smartindent
 let g:indent_guides_enable_on_vim_startup = 1
 
 "画面に関する設定
-set cursorline
 set number
-set cursorcolumn
 set showmatch  
 
 "スワップファイルを作成しない
@@ -91,7 +89,7 @@ call dein#add('tpope/vim-endwise')
 call dein#add('mattn/emmet-vim')
 "lacal変数のハイライト
 call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/neocomplcache')
+" call dein#add('Shougo/neocomplcache')
 call dein#add('todesking/ruby_hl_lvar.vim')
 "call dein#add("osyo-manga/vim-monster")
 "vimでgitを
@@ -234,52 +232,6 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgr
 let g:indent_guides_auto_colors=0
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar', 'unite']
 
-"------------------vimのタブ関連の設定----------------------------->
-" Anywhere SID.
-function! s:SID_PREFIX()
-  return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
-endfunction
-
-" Set tabline.
-function! s:my_tabline()  "{{{
-  let s = ''
-  for i in range(1, tabpagenr('$'))
-    let bufnrs = tabpagebuflist(i)
-    let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
-    let no = i  " display 0-origin tabpagenr.
-    let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
-    let title = fnamemodify(bufname(bufnr), ':t')
-    let title = '[' . title . ']'
-    let s .= '%'.i.'T'
-    let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
-    let s .= no . ':' . title
-    let s .= mod
-    let s .= '%#TabLineFill# '
-  endfor
-  let s .= '%#TabLineFill#%T%=%#TabLine#'
-  return s
-endfunction "}}}
-let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
-set showtabline=2 " 常にタブラインを表示
-
-" The prefix key.
-nnoremap    [Tag]   <Nop>
-nmap    t [Tag]
-" Tab jump
-for n in range(1, 9)
-  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
-endfor
-" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
-
-map <silent> [Tag]c :tablast <bar> tabnew<CR>
-" tc 新しいタブを一番右に作る
-map <silent> [Tag]x :tabclose<CR>
-" tx タブを閉じる
-map <silent> [Tag]n :tabnext<CR>
-" tn 次のタブ
-map <silent> [Tag]p :tabprevious<CR>
-" tp 前のタブ
-"----------vimのタブ関連の設定------------------->>>
 
 " かっこ補完==========================>
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
@@ -293,4 +245,3 @@ vnoremap ( "zdi^V(<C-R>z)<ESC>
 vnoremap " "zdi^V"<C-R>z^V"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
 "カッコ補完===========================>
-
