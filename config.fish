@@ -7,6 +7,7 @@ alias dt='cd ~/dotfiles'
 alias nv='nvim'
 alias gs='git status'
 alias gc='git checkout'
+alias gb='git branch'
 alias gpo='git push origin master'
 
 # ファイル作って入る
@@ -20,3 +21,6 @@ function dc
   command docker-compose $argv;
 end
 
+function gcm
+  command git commit -m $argv;
+end
