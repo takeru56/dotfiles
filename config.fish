@@ -1,6 +1,5 @@
 # alias 
 alias td='cd ~/Desktop'
-alias ls='gls --color=auto'
 alias be='bundle exec'
 alias tp='cd ~/projects'
 alias dt='cd ~/dotfiles'

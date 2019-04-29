@@ -1,7 +1,6 @@
 # alias 
 alias td='cd ~/Desktop'
 alias tg='cd ~/projects3/go-pro/src/github.com/takeru56'
-alias ls='gls --color=auto'
 alias be='bundle exec'
 alias tp='cd ~/projects'
 alias dt='cd ~/dotfiles'
