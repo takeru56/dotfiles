@@ -1,7 +1,7 @@
 # alias 
 alias td='cd ~/Desktop'
 alias be='bundle exec'
-alias tp='cd ~/projects'
+alias tp='cd ~/projects3'
 alias dt='cd ~/dotfiles'
 alias tg='cd ~/projects3/go-pro/src/github.com/takeru56'
 alias nv='nvim'
@@ -10,6 +10,8 @@ alias gc='git checkout'
 alias gb='git branch'
 alias gpo='git push origin master'
 alias gph='git push heroku master'
+
+status --is-interactive; and source (rbenv init -|psub)
 
 # ファイル作って入る
 function mkcd
