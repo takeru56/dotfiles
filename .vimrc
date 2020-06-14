@@ -50,6 +50,7 @@ set ignorecase " 大文字と小文字を区別しない
 set clipboard=unnamed,autoselect
 
 " indent
+set expandtab
 set tabstop=2
 set shiftwidth=2  "インデントの幅を調整
 set softtabstop=2

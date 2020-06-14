@@ -8,6 +8,7 @@ alias nv='nvim'
 alias gs='git status'
 alias gc='git checkout'
 alias gpo='git push origin master'
+alias tb='cd ~/blog/content/posts'
 
 # ファイル作って入る
 function mkcd(){
