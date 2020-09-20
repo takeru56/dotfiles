@@ -19,4 +19,3 @@ function dc(){
 function gc() {
   git commit "$1"
 }
-
